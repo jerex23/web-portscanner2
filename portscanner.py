@@ -1,6 +1,16 @@
 from flask import Flask, request, Response,render_template
+from scapy.all import * # This imports everything from Scapy, a powerful library that lets us build and send custom network packets.
 import socket #lets you work with IPs and ports
 import concurrent.futures #used to scan many ports at the same time
+
+
+from scapy.layers.inet import IP, TCP, UDP # Importing specific layers from Scapy for building packets
+# Importing show_versions to display Scapy version and dependencies
+from scapy.packet import show_versions
+
+# You must also import any other components you use
+from scapy.layers.inet import ICMP
+from scapy.sendrecv import sr1
 
 app = Flask(__name__)#intiaziting the web app 
 

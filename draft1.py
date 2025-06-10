@@ -127,3 +127,4 @@ def udp_scan(target,ports):
         elif resp.haslayer[ICMP] and resp[ICMP].type ==3 and resp[ICMP].code ==3:
             print(f"[-] Port{port} is Closed ")
 
+#test
